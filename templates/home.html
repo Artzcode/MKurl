@@ -1,0 +1,32 @@
+<!doctype html>
+<title>MKurl - Accueil</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container">
+
+	<form method="post">
+
+		<div class="control">
+			<textarea class="input is-primary" name="article" placeholder="Votre contenu markdown"></textarea>
+		</div>
+
+		<br>
+
+		<div class="control">
+			<input class="input is-primary" type="text" name="slug" placeholder="Votre slug personnalisé (optionnel)">
+		</div>
+
+		<br>
+
+		<input class="button is-primary" type="submit" name="submit" value="Sauvegarder">
+
+	</form>	
+	{{ err }}
+	
+	{% if url %}
+		<a href="/articles/{{ url }}">Votre article ici</a> : /articles/{{ url }}
+	{% endif %}
+
+</div>
