@@ -2,10 +2,6 @@ from flask import Flask, render_template, request, url_for, make_response, redir
 from flask_sqlalchemy import SQLAlchemy
 import markdown, random, string
 
-# >>> from main import db
-# >>> db.create_all()
-
-# >>> from main import Posts
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/test.db"
